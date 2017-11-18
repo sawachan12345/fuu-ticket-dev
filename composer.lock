@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+    "content-hash": "380625e2804858af6d282cd233a8397d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -965,6 +965,48 @@
                 "shell"
             ],
             "time": "2016-03-09T05:03:14+00:00"
+        },
+        {
+            "name": "shpasser/gae-support-l5",
+            "version": "1.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shpasser/GaeSupportL5.git",
+                "reference": "7367ee6fcf2c880560d8bac72a29500121a850f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shpasser/GaeSupportL5/zipball/7367ee6fcf2c880560d8bac72a29500121a850f6",
+                "reference": "7367ee6fcf2c880560d8bac72a29500121a850f6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "league/flysystem": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/console": "~5.0",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shpasser\\": "src/Shpasser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ron Shpasser",
+                    "email": "shpasser@gmail.com"
+                }
+            ],
+            "description": "Google App Engine Support for Laravel 5.1 apps.",
+            "time": "2016-04-09T17:48:01+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
