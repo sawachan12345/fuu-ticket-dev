@@ -2,12 +2,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-/*use Illuminate\Routing\Controller;
-*/
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
-class Controller_conform_bitcoin extends Controller
+class Controller_zaif_post extends Controller
 {
     public function postIndex(Request $request)
     {
@@ -15,7 +15,17 @@ class Controller_conform_bitcoin extends Controller
         $buyerId = $request->input('buyerId');
         $merchantName = $request->input('merchantName');
         $id = $request->input('id');
-        return view('conform_bitcoin', [
+/*
+        Mail::send('emails.paystart', [
+                                        'amount' => $amount,
+                                        'buyerId' => $buyerId,
+                                        'merchantName' => $merchantName,
+                                        'id' => $id
+                                      ], function ($m) {
+            $m->to('naonao.nao640@gmail.com')->subject('ビットコイン決済開始通知');
+        });
+*/
+        return view('zaif_post', [
                                         'amount' => $amount,
                                         'buyerId' => $buyerId,
                                         'merchantName' => $merchantName,

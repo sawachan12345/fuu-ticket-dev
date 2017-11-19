@@ -1,15 +1,30 @@
-runtime: php
-env: flex
+runtime:        php55
+api_version:    1
 
-runtime_config:
-  document_root: public
+handlers:
+        - url: /favicon\.ico
+          static_files: public/favicon.ico
+          upload: public/favicon\.ico
 
-# Ensure we skip ".env", which is only for local development
+        - url: /build
+          static_dir: public/build
+          application_readable: true
+
+        - url: /image
+          static_dir: public/image
+
+        - url: /.*
+          script: public/index.php
+
 skip_files:
-  - .env
+        - ^(.*/)?#.*#$
+        - ^(.*/)?.*~$
+        - ^(.*/)?.*\.py[co]$
+        - ^(.*/)?.*/RCS/.*$
+        - ^(.*/)?\.(?!env).*$
+        - ^(.*/)?node_modules.*$
+        - ^(.*/)?_ide_helper\.php$
+        - ^(.*/)?\.DS_Store$
 
 env_variables:
-  # Put production environment variables here.
-  APP_LOG: errorlog
-  APP_KEY: i6E91keCPEHafsFgEz90b3exDRfnCi5s
-  STORAGE_DIR: /tmp
+        GAE_SKIP_GCS_INIT: false

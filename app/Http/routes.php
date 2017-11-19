@@ -11,17 +11,17 @@
 |
 */
 
+/*ここから　店舗毎に設定する*/
 Route::get('/00000/start', function () {
     return view('start',['id' => '00000']);
 });
-
 Route::get('/00000/select', function () {
     return view('select',['id' => '00000']);
 });
-
 Route::get('/00000/input_credit', function () {
     return view('input_credit',['id' => '00000',
-                                'store' => '店舗A'
+                                'store' => '店舗A',
+                                'clientip' => '00387'
     ]);
 });
 Route::get('/00000/input_bitcoin', function () {
@@ -29,8 +29,15 @@ Route::get('/00000/input_bitcoin', function () {
                                 'store' => '店舗A'
     ]);
 });
+/*ここまで　店舗毎に設定する*/
 
-Route::controller('/{id}/conform_bitcoin', 'Controller_Conform_bitcoin');
+
+Route::controller('/{id}/conform_credit','Controller_conform_credit');
+Route::controller('/{id}/conform_bitcoin','Controller_conform_bitcoin');
+Route::controller('/{id}/zaif_post','Controller_zaif_post');
+Route::controller('/{id}/zaif_result','Controller_zaif_result');
+Route::controller('/telecom_settlment_result','Controller_telecom_settlment_result');
+
 
 /*
 Route::post('/00000/conform_credit', function () {

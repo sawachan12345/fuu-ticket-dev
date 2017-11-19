@@ -1,6 +1,5 @@
 <!--SuccessOK!-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -43,19 +42,21 @@
    <body>
      <div id="site-box">
         <div id="header">
-         クレジット決済のご案内</br>
-         店舗名：<?php echo $store; ?>
+          <div id="main">
+            ビットコイン決済のご案内</br>
+            店舗名：<?php echo $merchantName; ?>
+            <form action= "/<?php echo $id; ?>/zaif_post" method="POST">
+              <input type = "hidden" name = "amount" value = "<?php echo $amount; ?>"/></br>
+              <input type = "hidden" name = "buyerId" value = "<?php echo $buyerId; ?>"/></br>
+              <input type = "hidden" name = "merchantName" value = "<?php echo $merchantName; ?>"/></br>
+              <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/></br>
+              </br></br>
+              <input class="btn btn-success" type = "submit" value = "決済ページ"/>
+            </form>
+          </div>
+
         </div>
-        <div id="main">
-          <h2>ビットコイン決済のご案内</h2></br>
-          <form action= "/<?php echo $id; ?>/zaif_post" method="POST">
-            <input type = "hidden" name = "amount" value = "<?php echo $amount; ?>"/></br>
-            <input type = "hidden" name = "buyerId" value = "<?php echo $buyerId; ?>"/></br>
-            <input type = "hidden" name = "merchantName" value = "<?php echo $store; ?>"/></br>
-             </div></br></br>
-             <input class="btn btn-success" type = "submit" value = "決済ページ"/>
-          </form>
-        </div>
+
      </div>
   </body>
 

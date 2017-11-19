@@ -12,6 +12,11 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+      '/*/input_bitcoin',
+      '/*/conform_bitcoin',
+      '/*/zaif_post',
+      '/*/zaif_result',
+      '/*/input_credit',
+      '/*/conform_credit',
     ];
 }

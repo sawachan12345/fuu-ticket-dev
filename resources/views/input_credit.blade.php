@@ -47,9 +47,11 @@
         <div id="main">
           ご利用金額入力
           <h2>サンプル決済</br>（クレジット）</h2></br>
-          <form action= "/<?php echo $id; ?>/conform_credit" method="POST">
+          <form action= "/<?php echo $id; ?>/conform_credit" method="post">
             決済金額を入力して下さい。
             <input type = "text" name = "money" value = ""/>
+            <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+            <input type = "hidden" name = "clientip" value = "<?php echo $clientip; ?>"/>
             <input type = "submit" value = "決済開始"/>
           </form>
         </div>

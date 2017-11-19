@@ -1,9 +1,5 @@
 <!--SuccessOK!-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php
-$money = Input::post('money');
-$money = Input::post('money');
-?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
   <head>
@@ -46,16 +42,14 @@ $money = Input::post('money');
      <div id="site-box">
         <div id="header">
          クレジット決済のご案内</br>
-         店舗名：<?php echo $store; ?>
         </div>
         <div id="main">
-          ご利用金額入力
           <h2>サンプル決済</br>（クレジット）</h2></br>
-          <form action= "/<?php echo $id; ?>/conform_credit" method="POST">
+          <form action= "https://secure.telecomcredit.co.jp/inetcredit/secure/order.pl" method="post">
             クレジット決済へ
-            <input type = "hidden" name = "clientip" value = "00387"/>
-            <input type = "hidden" name = "sendid" value = "<?php echo $id; ?>"/>
-            <input type = "text" name = "money" value = "<?php echo $money; ?>"/>
+            <input type = "hidden" name = "clientip" value = "<?php echo $clientip; ?>"/>
+            <input type = "hidden" name = "sendid" value = "<?php echo $sendid; ?>"/>
+            <input type = "hidden" name = "money" value = "<?php echo $money; ?>"/>
             <input type = "hidden" name = "usrmail" value = ""/>
             <input type = "hidden" name = "usrtel" value = ""/>
             <input type = "hidden" name = "sendpass" value = ""/>
