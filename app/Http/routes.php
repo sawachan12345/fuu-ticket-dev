@@ -32,11 +32,31 @@ Route::get('/00000/input_bitcoin', function () {
 /*ここまで　店舗毎に設定する*/
 
 
+/*ここから　テレコムさん対応*/
+Route::get('/99999/t_start', function () {
+    return view('t_start',['id' => '99999']);
+});
+Route::get('/99999/t_select', function () {
+    return view('t_select',['id' => '99999']);
+});
+Route::get('/99999/t_input_credit', function () {
+    return view('t_input_credit',['id' => '99999',
+                                'store' => 'fuuticket',
+                                'clientip' => '00387'
+    ]);
+});
+Route::controller('/{id}/t_conform_credit','Controller_t_conform_credit');
+/*ここまで　テレコムさん対応*/
+
+
 Route::controller('/{id}/conform_credit','Controller_conform_credit');
 Route::controller('/{id}/conform_bitcoin','Controller_conform_bitcoin');
 Route::controller('/{id}/zaif_post','Controller_zaif_post');
 Route::controller('/{id}/zaif_result','Controller_zaif_result');
 Route::controller('/telecom_settlment_result','Controller_telecom_settlment_result');
+Route::controller('/fuuticket_kiyaku','Controller_fuuticket_kiyaku');
+
+
 
 
 /*

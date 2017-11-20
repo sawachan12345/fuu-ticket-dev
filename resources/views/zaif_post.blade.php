@@ -1,6 +1,6 @@
 <?php
 $nonce =  microtime(true) - 1509026602;
-$merchantName = mb_convert_encoding($merchantName, 'SJIS', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+$merchantName = mb_convert_encoding($merchantName, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 $POST_DATA = array(
     'method' => 'createInvoice',
     'key' => 'f6480948-b9c5-475e-b29a-24b9f2c28c2e',

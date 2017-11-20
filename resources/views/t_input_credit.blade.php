@@ -66,7 +66,7 @@
           </br>
        </div>
         <div id="main">
-          <form action= "/<?php echo $id; ?>/conform_bitcoin" method="post">
+          <form action= "/<?php echo $id; ?>/t_conform_credit" method="post">
           <table BORDER="1" CELLSPACING="0" CELLPADDING="0" width=100%>
               <tr align="left">
                 <th bgcolor="#add8e6">店舗名<br /></th>
@@ -74,16 +74,12 @@
               </tr>
               <tr align="left">
                 <th bgcolor="#add8e6">ご利用金額<br /></th>
-                <td><input class = "inputarea" type = "text" name = "amount" value = ""/> 円</br>（※ 半角数値入力）</td>
-              </tr>
-              <tr align="left">
-                <th bgcolor="#add8e6">メールアドレス<br /></th>
-                <td><input class = "inputarea" type = "text" name = "buyerId" value = ""/></br></td>
+                <td><input class = "inputarea" type = "text" name = "money" value = ""/> 円</br>（※ 半角数値入力）</td>
               </tr>
           </table>
-           <input type = "hidden" name = "merchantName" value = "<?php echo $store; ?>"/></br>
-           <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
-            <input class="submitbutton" type = "submit" value = "決済ページ"/>
+            <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+            <input type = "hidden" name = "clientip" value = "<?php echo $clientip; ?>"/></br>
+            <input class="submitbutton" type = "submit" value = "決済開始"/>
          </form></br>
          <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333; text-align: left; text">
          <u>オンライン決済に関するお問合せ窓口</u></br>

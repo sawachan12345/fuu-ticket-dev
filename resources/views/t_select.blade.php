@@ -43,7 +43,6 @@
 	       color: #000000;
       }
       .buttonstyle {
-          float: left;
           margin-right: 2%;
           margin-left: 2%;
       }
@@ -59,31 +58,28 @@
          オンライン決済のご案内
        </div></br>
         <div id="main">
-          ふうチケではクレジットカードとビットコイン両方でのお支払いが可能です！</br>
+          ふうチケではクレジットカードが可能です！</br>
           お客様のクレジットカード番号や個人情報などは当店には一切通知されませんので「風俗店でクレジットカードを使うのは抵抗がある…」という方も安心してお使い頂けます。
         </br></br>
           @if(app('env')=='local')
           <div class='buttonstyle2'>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_credit"><img src="{{asset('image/credit_button.gif')}}" /></a></br>
+          <div class="buttonstyle"><a href="/<?php echo $id; ?>/t_input_credit"><img src="{{asset('image/credit_button.gif')}}" /></a></br>
           <img width="94" height="94" src="{{asset('image/card_jcb_b.gif')}}" />
           <img width="94" height="94" src="{{asset('image/card_master_b.gif')}}" />
           <img width="94" height="94" src="{{asset('image/card_visa_b.gif')}}" />
-          </div>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_bitcoin"><img src="{{asset('image/bitcoin_button.gif')}}" /></a></br>
-          <img width="94" height="94" src="{{asset('image/bitcoin-orange-480x480.png')}}" />
           </div>
           </div>
           @endif
           @if(app('env')=='production')
           <div class='buttonstyle2'>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_credit"><img src="{{secure_asset('image/credit_button.gif')}}" /></a></br>
+          <div class="buttonstyle"><a href="/<?php echo $id; ?>/t_input_credit"><img src="{{secure_asset('image/credit_button.gif')}}" /></a></br>
           <img width="94" height="94" src="{{secure_asset('image/card_jcb_b.gif')}}" />
           <img width="94" height="94" src="{{secure_asset('image/card_master_b.gif')}}" />
           <img width="94" height="94" src="{{secure_asset('image/card_visa_b.gif')}}" />
           </div>
           </div>
           @endif
-        </div></br></br></br></br></br></br></br></br></br></br></br></br><br></br><br></br>
+        </div></br></br></br></br></br>
         <div id="footer">
           @if(app('env')=='local')
           <img src="{{asset('image/fuu_logo_mini.png')}}" />

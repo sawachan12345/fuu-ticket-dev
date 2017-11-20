@@ -51,20 +51,18 @@
 </br></br></br></br>
 <span class="titlefont">ふうチケ決済</span></br></br>
 <span class="subtitlefont">お客様のスマホで</br>簡単・便利にオンライン決済</span></br>
-<span class="normalfont">ふうチケでは、クレジット決済に加え、</br><b>ビットコイン決済</b>も行えます。</span></br></br></br>
+<span class="normalfont">ふうチケでは、<b>クレジット決済</b>が行えます。</span></br></br></br>
 @if(app('env')=='local')
-<p class="buttonstyle"><a href="/<?php echo $id; ?>/select"><img src="{{asset('image/button.gif')}}" /></a></p>
+<p class="buttonstyle"><a href="/<?php echo $id; ?>/t_select"><img src="{{asset('image/button.gif')}}" /></a></p>
 <img width="94" height="94" src="{{asset('image/card_jcb_b.gif')}}" />
 <img width="94" height="94" src="{{asset('image/card_master_b.gif')}}" />
 <img width="94" height="94" src="{{asset('image/card_visa_b.gif')}}" />
-<img width="94" height="94" src="{{asset('image/bitcoin-orange-480x480.png')}}" />
 @endif
 @if(app('env')=='production')
-<p class="buttonstyle"><a href="/<?php echo $id; ?>/select"><img src="{{secure_asset('image/button.gif')}}" /></a></p>
+<p class="buttonstyle"><a href="/<?php echo $id; ?>/t_select"><img src="{{secure_asset('image/button.gif')}}" /></a></p>
 <img width="94" height="94" src="{{secure_asset('image/card_jcb_b.gif')}}" />
 <img width="94" height="94" src="{{secure_asset('image/card_master_b.gif')}}" />
 <img width="94" height="94" src="{{secure_asset('image/card_visa_b.gif')}}" />
-<img width="94" height="94" src="{{secure_asset('image/bitcoin-orange-480x480.png')}}" />
 @endif
 </div>
 </body>
