@@ -64,24 +64,52 @@
         </br></br>
           @if(app('env')=='local')
           <div class='buttonstyle2'>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_credit"><img src="{{asset('image/credit_button.gif')}}" /></a></br>
+          <div class="buttonstyle">
+            <form action= "/<?php echo $id; ?>/conform_credit" method="post">
+              <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+              <input type = "hidden" name = "money" value = "<?php echo $amount; ?>"/>
+              <input type = "hidden" name = "merchantName" value = "<?php echo $merchantName; ?>"/>
+              <input type = "hidden" name = "clientip" value = "<?php echo $clientip; ?>"/>
+              <input type="image" src="{{asset('image/credit_button.gif')}}" />
+            </form></br>
           <img width="94" height="94" src="{{asset('image/card_jcb_b.gif')}}" />
           <img width="94" height="94" src="{{asset('image/card_master_b.gif')}}" />
           <img width="94" height="94" src="{{asset('image/card_visa_b.gif')}}" />
           </div>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_bitcoin"><img src="{{asset('image/bitcoin_button.gif')}}" /></a></br>
+          <div class="buttonstyle">
+          <form action= "/<?php echo $id; ?>/conform_bitcoin" method="post">
+            <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+            <input type = "hidden" name = "buyerId" value = "<?php echo $cust_mail; ?>"/>
+            <input type = "hidden" name = "amount" value = "<?php echo $amount; ?>"/>
+            <input type = "hidden" name = "merchantName" value = "<?php echo $merchantName; ?>"/>
+            <input type="image" src="{{asset('image/bitcoin_button.gif')}}" />
+          </form></br>
           <img width="94" height="94" src="{{asset('image/bitcoin-orange-480x480.png')}}" />
           </div>
           </div>
           @endif
           @if(app('env')=='production')
           <div class='buttonstyle2'>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_credit"><img src="{{secure_asset('image/credit_button.gif')}}" /></a></br>
+          <div class="buttonstyle">
+            <form action= "/<?php echo $id; ?>/conform_credit" method="post">
+              <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+              <input type = "hidden" name = "money" value = "<?php echo $amount; ?>"/>
+              <input type = "hidden" name = "merchantName" value = "<?php echo $merchantName; ?>"/>
+              <input type = "hidden" name = "clientip" value = "<?php echo $clientip; ?>"/>
+              <input type="image" src="{{secure_asset('image/credit_button.gif')}}" />
+            </form></br>
           <img width="94" height="94" src="{{secure_asset('image/card_jcb_b.gif')}}" />
           <img width="94" height="94" src="{{secure_asset('image/card_master_b.gif')}}" />
           <img width="94" height="94" src="{{secure_asset('image/card_visa_b.gif')}}" />
           </div>
-          <div class="buttonstyle"><a href="/<?php echo $id; ?>/input_bitcoin"><img src="{{secure_asset('image/bitcoin_button.gif')}}" /></a></br>
+          <div class="buttonstyle">
+          <form action= "/<?php echo $id; ?>/conform_bitcoin" method="post">
+            <input type = "hidden" name = "id" value = "<?php echo $id; ?>"/>
+            <input type = "hidden" name = "buyerId" value = "<?php echo $cust_mail; ?>"/>
+            <input type = "hidden" name = "amount" value = "<?php echo $amount; ?>"/>
+            <input type = "hidden" name = "merchantName" value = "<?php echo $merchantName; ?>"/>
+            <input type="image" src="{{secure_asset('image/bitcoin_button.gif')}}" />
+          </form></br>
           <img width="94" height="94" src="{{secure_asset('image/bitcoin-orange-480x480.png')}}" />
           </div>
           </div>

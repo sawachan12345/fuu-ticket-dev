@@ -21,7 +21,7 @@ Route::get('/00000/select', function () {
 Route::get('/00000/input_credit', function () {
     return view('input_credit',['id' => '00000',
                                 'store' => '店舗A',
-                                'clientip' => '00387'
+                                'clientip' => '81093'
     ]);
 });
 Route::get('/00000/input_bitcoin', function () {
@@ -29,8 +29,35 @@ Route::get('/00000/input_bitcoin', function () {
                                 'store' => '店舗A'
     ]);
 });
+/*ここから　オンライン予約の設定*/
+Route::get('/00000/input_reservation', function () {
+    return view('input_reservation',['id' => '00000',
+                                    'store' => '店舗A',
+                                    'clientip' => '81093',
+                                    //予約開始時間
+                                    'reservation_start' => '10:30',
+                                    //予約終了時間
+                                    'reservation_end' => '22:00',
+                                    'storemail' => 'contact@diamond-production.net',
+                                    //コース選択
+                                    'course' => array(
+                                      '通常コース' => array(
+                                        '60分:10000円',
+                                        '90分:15000円',
+                                        '120分:20000円',
+                                        '150分:25000円'
+                                      ),
+                                      '特別コース' => array(
+                                        '60分:20000円',
+                                        '90分:30000円',
+                                        '120分:40000円',
+                                        '150分:50000円'
+                                      )
+                                    )
+    ]);
+});
+/*ここまで　オンライン予約の設定*/
 /*ここまで　店舗毎に設定する*/
-
 
 /*ここから　テレコムさん対応*/
 Route::get('/99999/t_start', function () {
@@ -55,8 +82,13 @@ Route::controller('/{id}/zaif_post','Controller_zaif_post');
 Route::controller('/{id}/zaif_result','Controller_zaif_result');
 Route::controller('/telecom_settlment_result','Controller_telecom_settlment_result');
 Route::controller('/fuuticket_kiyaku','Controller_fuuticket_kiyaku');
+Route::controller('/{id}/inputted_start','Controller_inputted_start');
+Route::controller('/{id}/inputted_select','Controller_inputted_select');
 
-
+/*SSL証明書作成用*/
+Route::get('/.well-known/acme-challenge/bQ5ThmPallHs6AZkuvoMJNzVsiFBgKk18smhSkCpk30', function () {
+    return view('response_encrypt');
+});
 
 
 /*

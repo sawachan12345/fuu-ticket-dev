@@ -20,5 +20,8 @@ class VerifyCsrfToken extends BaseVerifier
       '/*/conform_credit',
       '/*/t_input_credit',
       '/*/t_conform_credit',
+      '/*/input_reservation',
+      '/*/inputted_start',
+      '/*/inputted_select',
     ];
 }
